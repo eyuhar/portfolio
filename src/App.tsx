@@ -1,6 +1,6 @@
 import picture from "@/assets/picture.jpg";
 import manxaLogo from "@/assets/ManxaLogo.png";
-import backend from "@/assets/backend.png";
+import ManxaBackend from "@/assets/ManxaBackend.png";
 import { Button } from "./components/ui/button";
 import { Card, CardDescription, CardTitle } from "./components/ui/card";
 import { GraduationCap, Mail } from "lucide-react";
@@ -500,11 +500,7 @@ function App() {
 
           <Card className="p-5 items-center">
             <div className="h-80 w-70 flex items-center justify-center">
-              <img
-                src="/src/assets/ManxaBackend.png"
-                alt=""
-                className="h-[50%]"
-              />
+              <img src={ManxaBackend} alt="" className="h-[50%]" />
             </div>
             <CardTitle>Manxa Backend</CardTitle>
             <div className="flex gap-5">
