@@ -4,13 +4,16 @@ import ManxaBackend from "@/assets/ManxaBackend.png";
 import { Button } from "./components/ui/button";
 import { Card, CardDescription, CardTitle } from "./components/ui/card";
 import { GraduationCap, Mail } from "lucide-react";
+import { useInView } from "@/hooks/useInView";
 
 function App() {
+  const { ref, inView } = useInView({ rootMargin: "0px 0px -40%", once: true });
+
   return (
     <div className="flex flex-col w-full font-sans items-center">
       <div className="h-screen w-full flex flex-col">
         {/* Header/Nav */}
-        <div className="flex w-full justify-between p-10 text-xl font-medium">
+        <div className="flex w-full justify-between p-10 text-xl font-medium animate-fade-down delay-[1600ms]">
           <div>Eyyüp Harputlu</div>
           <div className="flex gap-5">
             <div className="hover:underline hover:text-muted-foreground hover:cursor-pointer">
@@ -30,32 +33,60 @@ function App() {
 
         {/* Start/Home */}
         <div className="flex flex-col items-center mt-40 gap-3 font-medium">
-          <div className="h-70 w-70 rounded-[100%] overflow-hidden">
+          <div className="h-70 w-70 rounded-[100%] overflow-hidden animate-pop-in">
             <img src={picture} alt="" className="object-cover" />
           </div>
-          <p className="text-md text-muted-foreground">Hallo, Ich bin</p>
-          <p className="text-5xl">Eyyüp Harputlu</p>
-          <p className="text-3xl text-muted-foreground">Web Entwickler</p>
-          <div className="flex gap-3">
-            <Button className="rounded-4xl p-5" variant={"outline"}>
-              Lebenslauf herunterladen
+          <p className="text-md text-muted-foreground animate-fade-up delay-[1000ms]">
+            Hallo, Ich bin
+          </p>
+          <p className="text-5xl animate-fade-up delay-[1200ms]">
+            Eyyüp Harputlu
+          </p>
+          <p className="text-3xl text-muted-foreground animate-fade-up delay-[1400ms]">
+            Web Entwickler
+          </p>
+          <div className="flex gap-3 animate-fade-up delay-[1600ms]">
+            <Button variant={"outline"} className="rounded-4xl p-5">
+              Kontakt
             </Button>
-            <Button className="rounded-4xl p-5">Kontakt</Button>
           </div>
         </div>
       </div>
 
       {/* About me section */}
-      <div className="h-screen flex flex-col items-center max-w-7xl w-full p-10">
-        <p className="text-lg text-muted-foreground mt-20 mb-2">
+      <div
+        ref={ref}
+        className="h-screen flex flex-col items-center max-w-7xl w-full p-10"
+      >
+        <p
+          className={`text-lg text-muted-foreground mt-20 mb-2 ${
+            inView ? "animate-fade-left opacity-100" : "opacity-0"
+          }`}
+        >
           Erfahren Sie mehr
         </p>
-        <p className="text-5xl font-bold">Über mich</p>
+        <p
+          className={`text-5xl font-bold delay-200 ${
+            inView ? "animate-fade-right opacity-100" : "opacity-0"
+          }`}
+        >
+          Über mich
+        </p>
         <div className="w-full grid grid-cols-[auto_1fr] h-[70%] gap-15 items-center">
-          <img src={picture} alt="" className="h-100 w-auto rounded-4xl " />
+          <img
+            src={picture}
+            alt=""
+            className={`h-100 w-auto rounded-4xl delay-[600ms] ${
+              inView ? "animate-fade-right opacity-100" : "opacity-0"
+            }`}
+          />
           <div>
-            <Card className="p-5 items-center">
-              <CardTitle className="text-2xl flex items-center gap-2">
+            <Card
+              className={`p-5 items-center delay-[600ms] ${
+                inView ? "animate-fade-left opacity-100" : "opacity-0"
+              }`}
+            >
+              <CardTitle className="text-2xl flex flex-col items-center gap-1">
                 <GraduationCap size={32} />
                 <p>Abschluss</p>
               </CardTitle>
@@ -63,10 +94,14 @@ function App() {
                 B. Sc. Informatik
               </CardDescription>
             </Card>
-            <div className="p-5 text-muted-foreground">
+            <div
+              className={`p-5 text-muted-foreground delay-[600ms] ${
+                inView ? "animate-fade-up opacity-100" : "opacity-0"
+              }`}
+            >
               Ich habe einen Bachelorabschluss in Informatik und arbeite im
               Bereich Webentwicklung mit modernen Technologien wie TypeScript,
-              React, TailwindCSS und shadcn/ui. Zusätzlich habe ich erste
+              React, TailwindCSS und Shadcn. Zusätzlich habe ich erste
               praktische Erfahrungen im Backend-Bereich gesammelt, u. a. mit PHP
               und MySQL, sowie Grundkenntnisse in Python und Java, die ich
               während meines Studiums erlernt und angewendet habe.
@@ -87,7 +122,7 @@ function App() {
         <p className="text-lg text-muted-foreground mt-10 mb-2">Erkunden Sie</p>
         <p className="text-5xl font-bold">meine Kenntnisse</p>
         <div className="w-full flex flex-wrap gap-30 mt-20 p-5 justify-center">
-          <div className="flex flex-col items-center justify-center">
+          <div className="w-32 flex flex-col items-center justify-center">
             <svg viewBox="0 0 128 128" className="w-25 h-25">
               <path
                 fill="#E44D26"
@@ -107,9 +142,10 @@ function App() {
               ></path>
             </svg>
             <p className="text-center mt-2 text-lg font-medium">HTML</p>
+            <p className="text-muted-foreground">Erfahren</p>
           </div>
 
-          <div className="flex flex-col items-center justify-center">
+          <div className="w-32 flex flex-col items-center justify-center">
             <svg viewBox="0 0 128 128" className="w-25 h-25">
               <path
                 fill="#1572B6"
@@ -137,9 +173,10 @@ function App() {
               ></path>
             </svg>
             <p className="text-center mt-2 text-lg font-medium">CSS</p>
+            <p className="text-muted-foreground">Erfahren</p>
           </div>
 
-          <div className="flex flex-col items-center justify-center">
+          <div className="w-32 flex flex-col items-center justify-center">
             <svg viewBox="0 0 128 128" className="w-25 h-25">
               <path
                 fill="#F0DB4F"
@@ -151,9 +188,10 @@ function App() {
               ></path>
             </svg>
             <p className="text-center mt-2 text-lg font-medium">JavaScript</p>
+            <p className="text-muted-foreground">Erfahren</p>
           </div>
 
-          <div className="flex flex-col items-center justify-center">
+          <div className="w-32 flex flex-col items-center justify-center">
             <svg viewBox="0 0 128 128" className="w-25 h-25">
               <path fill="#fff" d="M22.67 47h99.67v73.67H22.67z"></path>
               <path
@@ -163,9 +201,10 @@ function App() {
               ></path>
             </svg>
             <p className="text-center mt-2 text-lg font-medium">TypeScript</p>
+            <p className="text-muted-foreground">Erfahren</p>
           </div>
 
-          <div className="flex flex-col items-center justify-center">
+          <div className="w-32 flex flex-col items-center justify-center">
             <svg viewBox="0 0 128 128" className="w-25 h-25">
               <g fill="#61DAFB">
                 <circle cx="64" cy="64" r="11.4"></circle>
@@ -173,9 +212,10 @@ function App() {
               </g>
             </svg>
             <p className="text-center mt-2 text-lg font-medium">React</p>
+            <p className="text-muted-foreground">Erfahren</p>
           </div>
 
-          <div className="flex flex-col items-center justify-center">
+          <div className="w-32 flex flex-col items-center justify-center">
             <svg viewBox="0 0 128 128" className="w-25 h-25">
               <path
                 d="M64.004 25.602c-17.067 0-27.73 8.53-32 25.597 6.398-8.531 13.867-11.73 22.398-9.597 4.871 1.214 8.352 4.746 12.207 8.66C72.883 56.629 80.145 64 96.004 64c17.066 0 27.73-8.531 32-25.602-6.399 8.536-13.867 11.735-22.399 9.602-4.87-1.215-8.347-4.746-12.207-8.66-6.27-6.367-13.53-13.738-29.394-13.738zM32.004 64c-17.066 0-27.73 8.531-32 25.602C6.402 81.066 13.87 77.867 22.402 80c4.871 1.215 8.352 4.746 12.207 8.66 6.274 6.367 13.536 13.738 29.395 13.738 17.066 0 27.73-8.53 32-25.597-6.399 8.531-13.867 11.73-22.399 9.597-4.87-1.214-8.347-4.746-12.207-8.66C55.128 71.371 47.868 64 32.004 64zm0 0"
@@ -183,9 +223,10 @@ function App() {
               ></path>
             </svg>
             <p className="text-center mt-2 text-lg font-medium">Tailwind CSS</p>
+            <p className="text-muted-foreground">Erfahren</p>
           </div>
 
-          <div className="flex flex-col items-center justify-center">
+          <div className="w-32 flex flex-col items-center justify-center">
             <div className="bg-background">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -201,11 +242,12 @@ function App() {
                   d="m27.76 16.56l-11.2 11.2m8.96-23.52L4.24 25.52"
                 />
               </svg>
-              <p className="text-center mt-2 text-lg font-medium">Shadcn</p>
             </div>
+            <p className="text-center mt-2 text-lg font-medium">Shadcn</p>
+            <p className="text-muted-foreground">Erfahren</p>
           </div>
 
-          <div className="flex flex-col items-center justify-center">
+          <div className="w-32 flex flex-col items-center justify-center">
             <svg viewBox="0 0 128 128" className="w-25 h-25">
               <defs>
                 <linearGradient
@@ -244,9 +286,10 @@ function App() {
               ></path>
             </svg>
             <p className="text-center mt-2 text-lg font-medium">Vite</p>
+            <p className="text-muted-foreground">Grundkenntnisse</p>
           </div>
 
-          <div className="flex flex-col items-center justify-center">
+          <div className="w-32 flex flex-col items-center justify-center">
             <svg viewBox="0 0 128 128" className="w-25 h-25">
               <path
                 fill="url(#a)"
@@ -288,9 +331,10 @@ function App() {
               </defs>
             </svg>
             <p className="text-center mt-2 text-lg font-medium">PHP</p>
+            <p className="text-muted-foreground">Fortgeschritten</p>
           </div>
 
-          <div className="flex flex-col items-center justify-center">
+          <div className="w-32 flex flex-col items-center justify-center">
             <svg viewBox="0 0 128 128" className="w-25 h-25">
               <path
                 fill="#00618A"
@@ -298,6 +342,7 @@ function App() {
               ></path>
             </svg>
             <p className="text-center mt-2 text-lg font-medium">MySQL</p>
+            <p className="text-muted-foreground">Grundkenntnisse</p>
           </div>
         </div>
 
@@ -327,7 +372,8 @@ function App() {
                   d="M52.214 126.021c22.476 1.437 57-.8 57.817-11.436 0 0-1.571 4.032-18.577 7.231-19.186 3.612-42.854 3.191-56.887.874 0 .001 2.875 2.381 17.647 3.331z"
                 ></path>
               </svg>
-              <p className="text-center mt-2 text-md font-medium">Java</p>
+              <p className="text-center mt-2 font-medium">Java</p>
+              <p className="text-sm text-muted-foreground">Grundkenntnisse</p>
             </div>
 
             <div className="flex flex-col items-center justify-center">
@@ -387,7 +433,8 @@ function App() {
                   d="M97.309 119.597c0 3.543-14.816 6.416-33.091 6.416-18.276 0-33.092-2.873-33.092-6.416 0-3.544 14.815-6.417 33.092-6.417 18.275 0 33.091 2.872 33.091 6.417z"
                 ></path>
               </svg>
-              <p className="text-center mt-2 text-md font-medium">Python</p>
+              <p className="text-center mt-2 font-medium">Python</p>
+              <p className="text-sm text-muted-foreground">Grundkenntnisse</p>
             </div>
 
             <div className="flex flex-col items-center justify-center">
@@ -401,7 +448,8 @@ function App() {
                   d="M118 73.348c-4.432.063-9.664 1.052-13.621 3.832-1.223.883-1.012 2.062.336 1.894 4.508-.547 14.44-1.726 16.21.547 1.77 2.23-1.976 11.62-3.663 15.79-.504 1.26.59 1.769 1.726.8 7.41-6.231 9.348-19.242 7.832-21.137-.757-.925-4.388-1.79-8.82-1.726zM1.63 75.859c-.927.116-1.347 1.236-.368 2.121 16.508 14.902 38.359 23.872 62.613 23.872 17.305 0 37.43-5.43 51.281-15.66 2.273-1.688.297-4.254-2.02-3.204-15.534 6.57-32.421 9.77-47.788 9.77-22.778 0-44.8-6.273-62.653-16.633-.39-.231-.755-.304-1.064-.266z"
                 ></path>
               </svg>
-              <p className="text-center mt-2 text-md font-medium">AWS</p>
+              <p className="text-center mt-2 font-medium">AWS</p>
+              <p className="text-sm text-muted-foreground">Grundkenntnisse</p>
             </div>
 
             <div className="flex flex-col items-center justify-center">
@@ -473,7 +521,8 @@ function App() {
                   transform="translate(1.494 2.203) scale(.24566)"
                 ></path>
               </svg>
-              <p className="text-center mt-2 text-md font-medium">Bootstrap</p>
+              <p className="text-center mt-2 font-medium">Bootstrap</p>
+              <p className="text-sm text-muted-foreground">Grundkenntnisse</p>
             </div>
           </div>
         </div>
@@ -486,7 +535,7 @@ function App() {
         </p>
         <p className="text-5xl font-bold">Projekte</p>
 
-        <div className="flex felx-wrap gap-20 mt-30">
+        <div className="flex flex-wrap gap-20 mt-30 justify-center">
           <Card className="p-5 items-center">
             <div className="h-80 w-70 flex items-center justify-center">
               <img src={manxaLogo} alt="" className="" />
