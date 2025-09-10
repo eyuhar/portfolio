@@ -5,9 +5,28 @@ import { Button } from "./components/ui/button";
 import { Card, CardDescription, CardTitle } from "./components/ui/card";
 import { GraduationCap, Mail } from "lucide-react";
 import { useInView } from "@/hooks/useInView";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 
 function App() {
-  const { ref, inView } = useInView({ rootMargin: "0px 0px -40%", once: true });
+  const { ref: refAbout, inView: inViewAbout } = useInView({
+    rootMargin: "0px 0px -40%",
+    once: true,
+  });
+
+  const { ref: refSkills, inView: inViewSkills } = useInView({
+    rootMargin: "0px 0px -40%",
+    once: true,
+  });
+
+  const { ref: refProjects, inView: inViewProjects } = useInView({
+    rootMargin: "0px 0px -40%",
+    once: true,
+  });
+
+  const { ref: refContact, inView: inViewContact } = useInView({
+    rootMargin: "0px 0px -40%",
+    once: true,
+  });
 
   return (
     <div className="flex flex-col w-full font-sans items-center">
@@ -16,16 +35,36 @@ function App() {
         <div className="flex w-full justify-between p-10 text-xl font-medium animate-fade-down delay-[1600ms]">
           <div>Eyyüp Harputlu</div>
           <div className="flex gap-5">
-            <div className="hover:underline hover:text-muted-foreground hover:cursor-pointer">
+            <div
+              className="hover:underline hover:text-muted-foreground hover:cursor-pointer"
+              onClick={() => {
+                refAbout.current?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
               Über mich
             </div>
-            <div className="hover:underline hover:text-muted-foreground hover:cursor-pointer">
+            <div
+              className="hover:underline hover:text-muted-foreground hover:cursor-pointer"
+              onClick={() => {
+                refSkills.current?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
               Kenntnisse
             </div>
-            <div className="hover:underline hover:text-muted-foreground hover:cursor-pointer">
+            <div
+              className="hover:underline hover:text-muted-foreground hover:cursor-pointer"
+              onClick={() => {
+                refProjects.current?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
               Projekte
             </div>
-            <div className="hover:underline hover:text-muted-foreground hover:cursor-pointer">
+            <div
+              className="hover:underline hover:text-muted-foreground hover:cursor-pointer"
+              onClick={() => {
+                refContact.current?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
               Kontakt
             </div>
           </div>
@@ -46,7 +85,13 @@ function App() {
             Web Entwickler
           </p>
           <div className="flex gap-3 animate-fade-up delay-[1600ms]">
-            <Button variant={"outline"} className="rounded-4xl p-5">
+            <Button
+              variant={"outline"}
+              className="rounded-4xl p-5 hover:cursor-pointer"
+              onClick={() => {
+                refContact.current?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
               Kontakt
             </Button>
           </div>
@@ -55,19 +100,19 @@ function App() {
 
       {/* About me section */}
       <div
-        ref={ref}
+        ref={refAbout}
         className="h-screen flex flex-col items-center max-w-7xl w-full p-10"
       >
         <p
-          className={`text-lg text-muted-foreground mt-20 mb-2 ${
-            inView ? "animate-fade-left opacity-100" : "opacity-0"
+          className={`text-lg text-muted-foreground mt-20 mb-2 delay-100 ${
+            inViewAbout ? "animate-fade-left opacity-100" : "opacity-0"
           }`}
         >
           Erfahren Sie mehr
         </p>
         <p
-          className={`text-5xl font-bold delay-200 ${
-            inView ? "animate-fade-right opacity-100" : "opacity-0"
+          className={`text-5xl font-bold delay-[500ms] ${
+            inViewAbout ? "animate-fade-right opacity-100" : "opacity-0"
           }`}
         >
           Über mich
@@ -76,14 +121,14 @@ function App() {
           <img
             src={picture}
             alt=""
-            className={`h-100 w-auto rounded-4xl delay-[600ms] ${
-              inView ? "animate-fade-right opacity-100" : "opacity-0"
+            className={`h-100 w-auto rounded-4xl delay-[900ms] ${
+              inViewAbout ? "animate-fade-right opacity-100" : "opacity-0"
             }`}
           />
           <div>
             <Card
-              className={`p-5 items-center delay-[600ms] ${
-                inView ? "animate-fade-left opacity-100" : "opacity-0"
+              className={`p-5 items-center delay-[900ms] ${
+                inViewAbout ? "animate-fade-left opacity-100" : "opacity-0"
               }`}
             >
               <CardTitle className="text-2xl flex flex-col items-center gap-1">
@@ -95,8 +140,8 @@ function App() {
               </CardDescription>
             </Card>
             <div
-              className={`p-5 text-muted-foreground delay-[600ms] ${
-                inView ? "animate-fade-up opacity-100" : "opacity-0"
+              className={`p-5 text-muted-foreground delay-[900ms] ${
+                inViewAbout ? "animate-fade-up opacity-100" : "opacity-0"
               }`}
             >
               Ich habe einen Bachelorabschluss in Informatik und arbeite im
@@ -118,11 +163,30 @@ function App() {
       </div>
 
       {/* Skills section */}
-      <div className="min-h-screen flex flex-col items-center max-w-7xl w-full p-10">
-        <p className="text-lg text-muted-foreground mt-10 mb-2">Erkunden Sie</p>
-        <p className="text-5xl font-bold">meine Kenntnisse</p>
+      <div
+        ref={refSkills}
+        className="min-h-screen flex flex-col items-center max-w-7xl w-full p-10"
+      >
+        <p
+          className={`text-lg text-muted-foreground mt-10 mb-2 delay-100 ${
+            inViewSkills ? "animate-fade-left opacity-100" : "opacity-0"
+          }`}
+        >
+          Erkunden Sie
+        </p>
+        <p
+          className={`text-5xl font-bold delay-[500ms] ${
+            inViewSkills ? "animate-fade-right opacity-100" : "opacity-0"
+          }`}
+        >
+          meine Kenntnisse
+        </p>
         <div className="w-full flex flex-wrap gap-30 mt-20 p-5 justify-center">
-          <div className="w-32 flex flex-col items-center justify-center">
+          <div
+            className={`w-32 flex flex-col items-center justify-center delay-[900ms] ${
+              inViewSkills ? "animate-fade-up opacity-100" : "opacity-0"
+            }`}
+          >
             <svg viewBox="0 0 128 128" className="w-25 h-25">
               <path
                 fill="#E44D26"
@@ -145,7 +209,11 @@ function App() {
             <p className="text-muted-foreground">Erfahren</p>
           </div>
 
-          <div className="w-32 flex flex-col items-center justify-center">
+          <div
+            className={`w-32 flex flex-col items-center justify-center delay-[1050ms] ${
+              inViewSkills ? "animate-fade-up opacity-100" : "opacity-0"
+            }`}
+          >
             <svg viewBox="0 0 128 128" className="w-25 h-25">
               <path
                 fill="#1572B6"
@@ -176,7 +244,11 @@ function App() {
             <p className="text-muted-foreground">Erfahren</p>
           </div>
 
-          <div className="w-32 flex flex-col items-center justify-center">
+          <div
+            className={`w-32 flex flex-col items-center justify-center delay-[1200ms] ${
+              inViewSkills ? "animate-fade-up opacity-100" : "opacity-0"
+            }`}
+          >
             <svg viewBox="0 0 128 128" className="w-25 h-25">
               <path
                 fill="#F0DB4F"
@@ -191,7 +263,11 @@ function App() {
             <p className="text-muted-foreground">Erfahren</p>
           </div>
 
-          <div className="w-32 flex flex-col items-center justify-center">
+          <div
+            className={`w-32 flex flex-col items-center justify-center delay-[1350ms] ${
+              inViewSkills ? "animate-fade-up opacity-100" : "opacity-0"
+            }`}
+          >
             <svg viewBox="0 0 128 128" className="w-25 h-25">
               <path fill="#fff" d="M22.67 47h99.67v73.67H22.67z"></path>
               <path
@@ -204,7 +280,11 @@ function App() {
             <p className="text-muted-foreground">Erfahren</p>
           </div>
 
-          <div className="w-32 flex flex-col items-center justify-center">
+          <div
+            className={`w-32 flex flex-col items-center justify-center delay-[1500ms] ${
+              inViewSkills ? "animate-fade-up opacity-100" : "opacity-0"
+            }`}
+          >
             <svg viewBox="0 0 128 128" className="w-25 h-25">
               <g fill="#61DAFB">
                 <circle cx="64" cy="64" r="11.4"></circle>
@@ -215,7 +295,11 @@ function App() {
             <p className="text-muted-foreground">Erfahren</p>
           </div>
 
-          <div className="w-32 flex flex-col items-center justify-center">
+          <div
+            className={`w-32 flex flex-col items-center justify-center delay-[1650ms] ${
+              inViewSkills ? "animate-fade-up opacity-100" : "opacity-0"
+            }`}
+          >
             <svg viewBox="0 0 128 128" className="w-25 h-25">
               <path
                 d="M64.004 25.602c-17.067 0-27.73 8.53-32 25.597 6.398-8.531 13.867-11.73 22.398-9.597 4.871 1.214 8.352 4.746 12.207 8.66C72.883 56.629 80.145 64 96.004 64c17.066 0 27.73-8.531 32-25.602-6.399 8.536-13.867 11.735-22.399 9.602-4.87-1.215-8.347-4.746-12.207-8.66-6.27-6.367-13.53-13.738-29.394-13.738zM32.004 64c-17.066 0-27.73 8.531-32 25.602C6.402 81.066 13.87 77.867 22.402 80c4.871 1.215 8.352 4.746 12.207 8.66 6.274 6.367 13.536 13.738 29.395 13.738 17.066 0 27.73-8.53 32-25.597-6.399 8.531-13.867 11.73-22.399 9.597-4.87-1.214-8.347-4.746-12.207-8.66C55.128 71.371 47.868 64 32.004 64zm0 0"
@@ -226,7 +310,11 @@ function App() {
             <p className="text-muted-foreground">Erfahren</p>
           </div>
 
-          <div className="w-32 flex flex-col items-center justify-center">
+          <div
+            className={`w-32 flex flex-col items-center justify-center delay-[1800ms] ${
+              inViewSkills ? "animate-fade-up opacity-100" : "opacity-0"
+            }`}
+          >
             <div className="bg-background">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -247,7 +335,11 @@ function App() {
             <p className="text-muted-foreground">Erfahren</p>
           </div>
 
-          <div className="w-32 flex flex-col items-center justify-center">
+          <div
+            className={`w-32 flex flex-col items-center justify-center delay-[1950ms] ${
+              inViewSkills ? "animate-fade-up opacity-100" : "opacity-0"
+            }`}
+          >
             <svg viewBox="0 0 128 128" className="w-25 h-25">
               <defs>
                 <linearGradient
@@ -289,7 +381,11 @@ function App() {
             <p className="text-muted-foreground">Grundkenntnisse</p>
           </div>
 
-          <div className="w-32 flex flex-col items-center justify-center">
+          <div
+            className={`w-32 flex flex-col items-center justify-center delay-[2100ms] ${
+              inViewSkills ? "animate-fade-up opacity-100" : "opacity-0"
+            }`}
+          >
             <svg viewBox="0 0 128 128" className="w-25 h-25">
               <path
                 fill="url(#a)"
@@ -331,10 +427,14 @@ function App() {
               </defs>
             </svg>
             <p className="text-center mt-2 text-lg font-medium">PHP</p>
-            <p className="text-muted-foreground">Fortgeschritten</p>
+            <p className="text-muted-foreground">Grundkenntnisse</p>
           </div>
 
-          <div className="w-32 flex flex-col items-center justify-center">
+          <div
+            className={`w-32 flex flex-col items-center justify-center delay-[2250ms] ${
+              inViewSkills ? "animate-fade-up opacity-100" : "opacity-0"
+            }`}
+          >
             <svg viewBox="0 0 128 128" className="w-25 h-25">
               <path
                 fill="#00618A"
@@ -347,8 +447,18 @@ function App() {
         </div>
 
         <div className="flex flex-col justify-center items-center">
-          <div className="text-xl font-medium mt-20">Weitere</div>
-          <div className="w-full flex flex-wrap gap-20 mt-5 p-5 items-center justify-center">
+          <div
+            className={`text-xl font-medium mt-20 delay-[2500ms] ${
+              inViewSkills ? "animate-fade-right opacity-100" : "opacity-0"
+            }`}
+          >
+            Weitere
+          </div>
+          <div
+            className={`w-full flex flex-wrap gap-20 mt-5 p-5 items-center justify-center delay-[2500ms] ${
+              inViewSkills ? "animate-fade-right opacity-100" : "opacity-0"
+            }`}
+          >
             <div className="flex flex-col items-center justify-center">
               <svg viewBox="0 0 128 128" className="w-20 h-20">
                 <path
@@ -529,14 +639,31 @@ function App() {
       </div>
 
       {/* Projects section */}
-      <div className="h-screen flex flex-col items-center max-w-7xl w-full p-10">
-        <p className="text-lg text-muted-foreground mt-10 mb-2">
+      <div
+        ref={refProjects}
+        className="h-screen flex flex-col items-center max-w-7xl w-full p-10"
+      >
+        <p
+          className={`text-lg text-muted-foreground mt-10 mb-2 delay-100 ${
+            inViewProjects ? "animate-fade-left opacity-100" : "opacity-0"
+          }`}
+        >
           Meine aktuellen
         </p>
-        <p className="text-5xl font-bold">Projekte</p>
+        <p
+          className={`text-5xl font-bold delay-[500ms] ${
+            inViewProjects ? "animate-fade-right opacity-100" : "opacity-0"
+          }`}
+        >
+          Projekte
+        </p>
 
         <div className="flex flex-wrap gap-20 mt-30 justify-center">
-          <Card className="p-5 items-center">
+          <Card
+            className={`p-5 items-center delay-[800ms] ${
+              inViewProjects ? "animate-fade-up opacity-100" : "opacity-0"
+            }`}
+          >
             <div className="h-80 w-70 flex items-center justify-center">
               <img src={manxaLogo} alt="" className="" />
             </div>
@@ -547,7 +674,11 @@ function App() {
             </div>
           </Card>
 
-          <Card className="p-5 items-center">
+          <Card
+            className={`p-5 items-center delay-[950ms] ${
+              inViewProjects ? "animate-fade-up opacity-100" : "opacity-0"
+            }`}
+          >
             <div className="h-80 w-70 flex items-center justify-center">
               <img src={ManxaBackend} alt="" className="h-[50%]" />
             </div>
@@ -560,13 +691,30 @@ function App() {
       </div>
 
       {/* Contact section */}
-      <div className="h-screen flex flex-col items-center max-w-7xl w-full p-10">
+      <div
+        ref={refContact}
+        className="h-screen flex flex-col items-center max-w-7xl w-full p-10"
+      >
         <div className="h-[70%] flex flex-col items-center justify-center">
-          <p className="text-lg text-muted-foreground mt-10 mb-2">
+          <p
+            className={`text-lg text-muted-foreground mt-10 mb-2 delay-100 ${
+              inViewContact ? "animate-fade-left opacity-100" : "opacity-0"
+            }`}
+          >
             Treten Sie mit mir in
           </p>
-          <p className="text-5xl font-bold">Kontakt</p>
-          <Card className="flex flex-row items-center gap-2 p-8 mt-10">
+          <p
+            className={`text-5xl font-bold delay-[500ms] ${
+              inViewContact ? "animate-fade-right opacity-100" : "opacity-0"
+            }`}
+          >
+            Kontakt
+          </p>
+          <Card
+            className={`flex flex-row items-center gap-2 p-8 mt-10 delay-[800ms] ${
+              inViewContact ? "animate-fade-up opacity-100" : "opacity-0"
+            }`}
+          >
             <Mail size={28} />
             <a
               href="mailto:eyuep.harputlu@gmail.com"
@@ -581,6 +729,7 @@ function App() {
           <p>Copyright &copy; 2025 Eyyüp Harputlu. All Rights Reserved.</p>
         </div>
       </div>
+      <ScrollToTopButton className="fixed bottom-10 right-10" />
     </div>
   );
 }
