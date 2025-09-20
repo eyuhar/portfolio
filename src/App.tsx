@@ -3,9 +3,18 @@ import manxaLogo from "@/assets/ManxaLogo.png";
 import ManxaBackend from "@/assets/ManxaBackend.png";
 import { Button } from "./components/ui/button";
 import { Card, CardDescription, CardTitle } from "./components/ui/card";
-import { GraduationCap, Mail } from "lucide-react";
+import { GraduationCap, Mail, Info } from "lucide-react";
 import { useInView } from "@/hooks/useInView";
 import ScrollToTopButton from "./components/ScrollToTopButton";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "./components/ui/dialog";
 
 function App() {
   const { ref: refAbout, inView: inViewAbout } = useInView({
@@ -669,8 +678,47 @@ function App() {
             </div>
             <CardTitle>Manxa</CardTitle>
             <div className="flex gap-5">
-              <Button variant={"outline"}>GitHub</Button>
-              <Button variant={"outline"}>Live Demo</Button>
+              <Button variant={"outline"} asChild>
+                <a href="https://github.com/eyuhar/manxa" target="_blank">
+                  GitHub
+                </a>
+              </Button>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button variant={"outline"} className="cursor-pointer">
+                    Live Demo
+                  </Button>
+                </DialogTrigger>
+                <DialogContent>
+                  <DialogHeader className="items-center">
+                    <DialogTitle className="flex gap-1 items-center">
+                      <Info size={20} />
+                      <p>Info</p>
+                    </DialogTitle>
+                    <DialogDescription>
+                      Um die WebApp besser testen zu können, nutze bitte die
+                      folgenden Testzugangsdaten:
+                    </DialogDescription>
+                  </DialogHeader>
+                  <div className="flex flex-col items-center mt-5">
+                    <p className="font-medium">Email</p>
+                    <p className="text-muted-foreground text-sm">
+                      test@example.com
+                    </p>
+                  </div>
+                  <div className="flex flex-col items-center mb-5">
+                    <p className="font-medium">Passwort</p>
+                    <p className="text-muted-foreground text-sm">test</p>
+                  </div>
+                  <DialogFooter>
+                    <Button variant={"outline"} asChild>
+                      <a href="https://manxa.vercel.app/" target="_blank">
+                        Weiter
+                      </a>
+                    </Button>
+                  </DialogFooter>
+                </DialogContent>
+              </Dialog>
             </div>
           </Card>
 
@@ -684,7 +732,14 @@ function App() {
             </div>
             <CardTitle>Manxa Backend</CardTitle>
             <div className="flex gap-5">
-              <Button variant={"outline"}>GitHub</Button>
+              <Button variant={"outline"} asChild>
+                <a
+                  href="https://github.com/eyuhar/manxa-backend"
+                  target="_blank"
+                >
+                  GitHub
+                </a>
+              </Button>
             </div>
           </Card>
         </div>
