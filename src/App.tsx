@@ -15,10 +15,15 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "./components/ui/dialog";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
-  const [isLoadedImg, setIsLoadedImg] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    const raf = requestAnimationFrame(() => setMounted(true));
+    return () => cancelAnimationFrame(raf);
+  }, []);
 
   const { ref: refAbout, inView: inViewAbout } = useInView({
     rootMargin: "0px 0px -40%",
@@ -44,7 +49,11 @@ function App() {
     <div className="flex flex-col w-full font-sans items-center">
       <div className="h-screen w-full flex flex-col">
         {/* Header/Nav */}
-        <div className="flex w-full justify-between p-10 text-xl font-medium animate-fade-down delay-[1600ms]">
+        <div
+          className={`flex w-full justify-between p-10 text-xl font-medium ${
+            mounted ? "animate-fade-down delay-[1600ms]" : "opacity-0"
+          }`}
+        >
           <div>Eyyüp Harputlu</div>
           <div className="flex gap-5">
             <div
@@ -86,26 +95,37 @@ function App() {
         <div className="flex flex-col items-center mt-40 gap-3 font-medium">
           <div
             className={`h-70 w-70 rounded-[100%] overflow-hidden ${
-              isLoadedImg ? "animate-pop-in" : "opacity-0"
+              mounted ? "animate-pop-in" : "opacity-0"
             }`}
           >
-            <img
-              src={picture}
-              alt=""
-              className="object-cover"
-              onLoad={() => setIsLoadedImg(true)}
-            />
+            <img src={picture} alt="" className="object-cover" />
           </div>
-          <p className="text-md text-muted-foreground animate-fade-up delay-[1000ms]">
+          <p
+            className={`text-md text-muted-foreground ${
+              mounted ? "animate-fade-up delay-[1000ms]" : "opacity-0"
+            }`}
+          >
             Hallo, Ich bin
           </p>
-          <p className="text-5xl animate-fade-up delay-[1200ms]">
+          <p
+            className={`text-5xl ${
+              mounted ? "animate-fade-up delay-[1200ms]" : "opacity-0"
+            }`}
+          >
             Eyyüp Harputlu
           </p>
-          <p className="text-3xl text-muted-foreground animate-fade-up delay-[1400ms]">
+          <p
+            className={`text-3xl text-muted-foreground ${
+              mounted ? "animate-fade-up delay-[1400ms]" : "opacity-0"
+            }`}
+          >
             Web Entwickler
           </p>
-          <div className="flex gap-3 animate-fade-up delay-[1600ms]">
+          <div
+            className={`flex gap-3 ${
+              mounted ? "animate-fade-up delay-[1600ms]" : "opacity-0"
+            }`}
+          >
             <Button
               variant={"outline"}
               className="rounded-4xl p-5 hover:cursor-pointer"
