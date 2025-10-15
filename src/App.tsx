@@ -15,8 +15,11 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "./components/ui/dialog";
+import { useState } from "react";
 
 function App() {
+  const [isLoadedImg, setIsLoadedImg] = useState(false);
+
   const { ref: refAbout, inView: inViewAbout } = useInView({
     rootMargin: "0px 0px -40%",
     once: true,
@@ -81,8 +84,17 @@ function App() {
 
         {/* Start/Home */}
         <div className="flex flex-col items-center mt-40 gap-3 font-medium">
-          <div className="h-70 w-70 rounded-[100%] overflow-hidden animate-pop-in">
-            <img src={picture} alt="" className="object-cover" />
+          <div
+            className={`h-70 w-70 rounded-[100%] overflow-hidden ${
+              isLoadedImg ? "animate-pop-in" : "opacity-0"
+            }`}
+          >
+            <img
+              src={picture}
+              alt=""
+              className="object-cover"
+              onLoad={() => setIsLoadedImg(true)}
+            />
           </div>
           <p className="text-md text-muted-foreground animate-fade-up delay-[1000ms]">
             Hallo, Ich bin
