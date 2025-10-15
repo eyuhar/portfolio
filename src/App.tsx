@@ -16,6 +16,12 @@ import {
   DialogTrigger,
 } from "./components/ui/dialog";
 import { useEffect, useState } from "react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "./components/ui/dropdown-menu";
 
 function App() {
   const [mounted, setMounted] = useState(false);
@@ -47,15 +53,15 @@ function App() {
 
   return (
     <div className="flex flex-col w-full font-sans items-center">
-      <div className="h-screen w-full flex flex-col">
+      <div className="min-h-screen w-full flex flex-col">
         {/* Header/Nav */}
         <div
-          className={`flex w-full justify-between p-10 text-xl font-medium ${
+          className={`flex w-full justify-between items-center p-10 text-xl font-medium ${
             mounted ? "animate-fade-down delay-[1600ms]" : "opacity-0"
           }`}
         >
           <div>Eyyüp Harputlu</div>
-          <div className="flex gap-5">
+          <div className="hidden md:flex gap-5 ">
             <div
               className="hover:underline hover:text-muted-foreground hover:cursor-pointer"
               onClick={() => {
@@ -89,12 +95,84 @@ function App() {
               Kontakt
             </div>
           </div>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button
+                variant="outline"
+                className="md:hidden focus-visible:ring-0 cursor-pointer"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  className="fill-foreground"
+                >
+                  <title>menu</title>
+                  <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
+                </svg>
+                Menü
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="font-medium">
+              <DropdownMenuItem asChild>
+                <div
+                  className="hover:underline hover:text-muted-foreground hover:cursor-pointer"
+                  onClick={() => {
+                    setTimeout(() => {
+                      refAbout.current?.scrollIntoView({ behavior: "smooth" });
+                    }, 100);
+                  }}
+                >
+                  Über mich
+                </div>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <div
+                  className="hover:underline hover:text-muted-foreground hover:cursor-pointer"
+                  onClick={() => {
+                    setTimeout(() => {
+                      refSkills.current?.scrollIntoView({ behavior: "smooth" });
+                    }, 100);
+                  }}
+                >
+                  Kenntnisse
+                </div>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <div
+                  className="hover:underline hover:text-muted-foreground hover:cursor-pointer"
+                  onClick={() => {
+                    setTimeout(() => {
+                      refProjects.current?.scrollIntoView({
+                        behavior: "smooth",
+                      });
+                    }, 100);
+                  }}
+                >
+                  Projekte
+                </div>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <div
+                  className="hover:underline hover:text-muted-foreground hover:cursor-pointer"
+                  onClick={() => {
+                    setTimeout(() => {
+                      refContact.current?.scrollIntoView({
+                        behavior: "smooth",
+                      });
+                    }, 100);
+                  }}
+                >
+                  Kontakt
+                </div>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
 
         {/* Start/Home */}
-        <div className="flex flex-col items-center mt-40 gap-3 font-medium">
+        <div className="flex flex-col items-center mt-20 md:mt-40 gap-3 font-medium">
           <div
-            className={`h-70 w-70 rounded-[100%] overflow-hidden ${
+            className={`h-60 w-60 md:h-70 md:w-70 rounded-[100%] overflow-hidden ${
               mounted ? "animate-pop-in" : "opacity-0"
             }`}
           >
@@ -108,14 +186,14 @@ function App() {
             Hallo, Ich bin
           </p>
           <p
-            className={`text-5xl ${
+            className={`text-4xl md:text-5xl ${
               mounted ? "animate-fade-up delay-[1200ms]" : "opacity-0"
             }`}
           >
             Eyyüp Harputlu
           </p>
           <p
-            className={`text-3xl text-muted-foreground ${
+            className={`text-2xl md:text-3xl text-muted-foreground ${
               mounted ? "animate-fade-up delay-[1400ms]" : "opacity-0"
             }`}
           >
@@ -142,7 +220,7 @@ function App() {
       {/* About me section */}
       <div
         ref={refAbout}
-        className="h-screen flex flex-col items-center max-w-7xl w-full p-10"
+        className="min-h-screen md:h-screen flex flex-col items-center max-w-7xl w-full p-10"
       >
         <p
           className={`text-lg text-muted-foreground mt-20 mb-2 delay-100 ${
@@ -158,11 +236,11 @@ function App() {
         >
           Über mich
         </p>
-        <div className="w-full grid grid-cols-[auto_1fr] h-[70%] gap-15 items-center">
+        <div className="w-full grid md:grid-cols-[auto_1fr] h-[70%] gap-15 items-center mt-20">
           <img
             src={picture}
             alt=""
-            className={`h-100 w-auto rounded-4xl delay-[900ms] ${
+            className={`h-100 w-auto rounded-4xl delay-[900ms] place-self-center ${
               inViewAbout ? "animate-fade-right opacity-100" : "opacity-0"
             }`}
           />
@@ -216,7 +294,7 @@ function App() {
           Erkunden Sie
         </p>
         <p
-          className={`text-5xl font-bold delay-[500ms] ${
+          className={`text-5xl font-bold delay-[500ms] text-center ${
             inViewSkills ? "animate-fade-right opacity-100" : "opacity-0"
           }`}
         >
@@ -682,7 +760,7 @@ function App() {
       {/* Projects section */}
       <div
         ref={refProjects}
-        className="h-screen flex flex-col items-center max-w-7xl w-full p-10"
+        className="min-h-screen flex flex-col items-center max-w-7xl w-full p-10"
       >
         <p
           className={`text-lg text-muted-foreground mt-10 mb-2 delay-100 ${
@@ -816,7 +894,7 @@ function App() {
           <p>Copyright &copy; 2025 Eyyüp Harputlu. All Rights Reserved.</p>
         </div>
       </div>
-      <ScrollToTopButton className="fixed bottom-10 right-10" />
+      <ScrollToTopButton className="fixed bottom-5 right-5 md:bottom-10 md:right-10" />
     </div>
   );
 }
