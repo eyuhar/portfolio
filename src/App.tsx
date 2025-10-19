@@ -22,6 +22,22 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "./components/ui/dropdown-menu";
+import { Badge } from "./components/ui/badge";
+import {
+  SiAmazonwebservices,
+  SiJsonwebtokens,
+  SiMysql,
+  SiPhp,
+  SiReact,
+  SiReactquery,
+  SiReactrouter,
+  SiShadcnui,
+  SiTailwindcss,
+  SiTypescript,
+  SiVercel,
+  SiVite,
+} from "react-icons/si";
+import { GrMysql } from "react-icons/gr";
 
 function App() {
   const [mounted, setMounted] = useState(false);
@@ -760,7 +776,7 @@ function App() {
       {/* Projects section */}
       <div
         ref={refProjects}
-        className="min-h-screen flex flex-col items-center max-w-7xl w-full p-10"
+        className="min-h-screen flex flex-col items-center max-w-7xl w-full p-5 sm:p-10"
       >
         <p
           className={`text-lg text-muted-foreground mt-10 mb-2 delay-100 ${
@@ -779,14 +795,52 @@ function App() {
 
         <div className="flex flex-wrap gap-10 sm:gap-20 mt-30 justify-center">
           <Card
-            className={`p-5 items-center delay-[800ms] ${
+            className={`p-5 items-center delay-[800ms] max-w-96 justify-between ${
               inViewProjects ? "animate-fade-up opacity-100" : "opacity-0"
             }`}
           >
-            <div className="h-68 w-60 sm:h-80 sm:w-70 flex items-center justify-center">
+            <div className="h-48 w-60 sm:w-70 flex items-center justify-center">
               <img src={manxaLogo} alt="" className="" />
             </div>
             <CardTitle>Manxa</CardTitle>
+            <div className="flex flex-wrap gap-1 justify-center">
+              <Badge className="bg-[#3178C6] ">
+                <SiTypescript /> TypeScript
+              </Badge>
+              <Badge className="bg-[#61DAFB] text-foreground">
+                <SiReact /> React
+              </Badge>
+              <Badge className="bg-[#38BDF8]">
+                <SiTailwindcss /> Tailwind CSS
+              </Badge>
+              <Badge className="bg-black">
+                <SiShadcnui /> shadcn/ui
+              </Badge>
+              <Badge className="bg-[#CA4245]">
+                <SiReactrouter /> React Router
+              </Badge>
+              <Badge className="bg-[#FF4154]">
+                <SiReactquery /> React Query
+              </Badge>
+              <Badge>
+                <SiJsonwebtokens /> Auth | JWT
+              </Badge>
+              <Badge className="bg-[#646CFF]">
+                <SiVite /> Vite
+              </Badge>
+            </div>
+            <p className="text-center text-muted-foreground text-sm">
+              Manxa ist eine Webanwendung zum Suchen, Lesen und Verwalten von
+              Manxa. Nutzer können persönliche Bibliotheken anlegen,
+              Lesefortschritte speichern und Statistiken zu ihrem Leseverhalten
+              einsehen, alles in einer modernen, übersichtlichen Oberfläche.
+            </p>
+            <div className="flex items-center gap-1">
+              <p className="text-muted-foreground text-sm">Deployment: </p>
+              <Badge>
+                <SiVercel /> Vercel
+              </Badge>
+            </div>
             <div className="flex gap-5">
               <Button variant={"outline"} asChild>
                 <a href="https://github.com/eyuhar/manxa" target="_blank">
@@ -833,14 +887,37 @@ function App() {
           </Card>
 
           <Card
-            className={`p-5 items-center delay-[950ms] ${
+            className={`p-5 items-center delay-[950ms] max-w-96 justify-between ${
               inViewProjects ? "animate-fade-up opacity-100" : "opacity-0"
             }`}
           >
-            <div className="h-68 w-60 sm:h-80 sm:w-70 flex items-center justify-center">
-              <img src={ManxaBackend} alt="" className="h-[50%]" />
+            <div className="h-48 w-60 sm:w-70 flex items-center justify-center">
+              <img src={ManxaBackend} alt="" />
             </div>
             <CardTitle>Manxa Backend</CardTitle>
+            <div className="flex flex-wrap gap-1 justify-center">
+              <Badge className="bg-[#777BB4]">
+                <SiPhp className="w-4! h-4!" /> PHP
+              </Badge>
+              <Badge className="bg-[#4479A1]">
+                <GrMysql className="w-4! h-4!" /> MySQL
+              </Badge>
+              <Badge>
+                <SiJsonwebtokens /> Auth | JWT
+              </Badge>
+            </div>
+            <p className="text-center text-muted-foreground text-sm">
+              Das Manxa Backend stellt eine RESTful API für die Verwaltung und
+              das Lesen von Manxa bereit. Es bietet Benutzerkonten mit
+              JWT-Authentifizierung, individuelle Listen, Favoritenverwaltung,
+              Lesefortschritt-Tracking und eine Scraping-Funktion für Inhalte.
+            </p>
+            <div className="flex items-center gap-1">
+              <p className="text-muted-foreground text-sm">Deployment: </p>
+              <Badge className="bg-[#FF9900]">
+                <SiAmazonwebservices className="w-4! h-4!" /> AWS
+              </Badge>
+            </div>
             <div className="flex gap-5">
               <Button variant={"outline"} asChild>
                 <a
