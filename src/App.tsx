@@ -26,7 +26,6 @@ import { Badge } from "./components/ui/badge";
 import {
   SiAmazonwebservices,
   SiJsonwebtokens,
-  SiMysql,
   SiPhp,
   SiReact,
   SiReactquery,
