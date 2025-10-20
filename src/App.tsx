@@ -25,6 +25,7 @@ import {
 import { Badge } from "./components/ui/badge";
 import {
   SiAmazonwebservices,
+  SiGithub,
   SiJsonwebtokens,
   SiPhp,
   SiReact,
@@ -843,10 +844,10 @@ function App() {
             <div className="flex gap-5">
               <Button variant={"outline"} asChild>
                 <a href="https://github.com/eyuhar/manxa" target="_blank">
-                  GitHub
+                  <SiGithub /> GitHub
                 </a>
               </Button>
-              <Dialog>
+              {/*<Dialog>
                 <DialogTrigger asChild>
                   <Button variant={"outline"} className="cursor-pointer">
                     Live Demo
@@ -881,7 +882,7 @@ function App() {
                     </Button>
                   </DialogFooter>
                 </DialogContent>
-              </Dialog>
+              </Dialog>*/}
             </div>
           </Card>
 
@@ -923,7 +924,7 @@ function App() {
                   href="https://github.com/eyuhar/manxa-backend"
                   target="_blank"
                 >
-                  GitHub
+                  <SiGithub /> GitHub
                 </a>
               </Button>
             </div>
