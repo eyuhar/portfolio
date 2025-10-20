@@ -3,10 +3,10 @@ import manxaLogo from "@/assets/ManxaLogo.png";
 import ManxaBackend from "@/assets/ManxaBackend.png";
 import { Button } from "./components/ui/button";
 import { Card, CardDescription, CardTitle } from "./components/ui/card";
-import { GraduationCap, Mail, Info } from "lucide-react";
+import { GraduationCap, Mail /*Info*/ } from "lucide-react";
 import { useInView } from "@/hooks/useInView";
 import ScrollToTopButton from "./components/ScrollToTopButton";
-import {
+/*import {
   Dialog,
   DialogContent,
   DialogDescription,
@@ -14,7 +14,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "./components/ui/dialog";
+} from "./components/ui/dialog";*/
 import { useEffect, useState } from "react";
 import {
   DropdownMenu,
