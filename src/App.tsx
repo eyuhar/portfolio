@@ -895,7 +895,7 @@ function App() {
             <div className="h-48 w-60 sm:w-70 flex items-center justify-center">
               <img src={ManxaBackend} alt="" />
             </div>
-            <CardTitle>Manxa Backend</CardTitle>
+            <CardTitle>Manxa Scraper</CardTitle>
             <div className="flex flex-wrap gap-1 justify-center">
               <Badge className="bg-[#777BB4]">
                 <SiPhp className="w-4! h-4!" /> PHP
