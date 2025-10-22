@@ -3,10 +3,10 @@ import manxaLogo from "@/assets/ManxaLogo.png";
 import ManxaBackend from "@/assets/ManxaBackend.png";
 import { Button } from "./components/ui/button";
 import { Card, CardDescription, CardTitle } from "./components/ui/card";
-import { GraduationCap, Mail /*Info*/ } from "lucide-react";
+import { GraduationCap, Mail, Info } from "lucide-react";
 import { useInView } from "@/hooks/useInView";
 import ScrollToTopButton from "./components/ScrollToTopButton";
-/*import {
+import {
   Dialog,
   DialogContent,
   DialogDescription,
@@ -14,7 +14,7 @@ import ScrollToTopButton from "./components/ScrollToTopButton";
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "./components/ui/dialog";*/
+} from "./components/ui/dialog";
 import { useEffect, useState } from "react";
 import {
   DropdownMenu,
@@ -847,7 +847,7 @@ function App() {
                   <SiGithub /> GitHub
                 </a>
               </Button>
-              {/*<Dialog>
+              <Dialog>
                 <DialogTrigger asChild>
                   <Button variant={"outline"} className="cursor-pointer">
                     Live Demo
@@ -882,7 +882,7 @@ function App() {
                     </Button>
                   </DialogFooter>
                 </DialogContent>
-              </Dialog>*/}
+              </Dialog>
             </div>
           </Card>
 
