@@ -1,6 +1,7 @@
 import picture from "@/assets/picture.jpg";
 import manxaLogo from "@/assets/ManxaLogo.png";
 import ManxaBackend from "@/assets/ManxaBackend.png";
+import portfolio from "@/assets/portfolio-site-screenshot.png";
 import { Button } from "./components/ui/button";
 import { Card, CardDescription, CardTitle } from "./components/ui/card";
 import { GraduationCap, Mail, Info } from "lucide-react";
@@ -924,6 +925,54 @@ function App() {
                   href="https://github.com/eyuhar/manxa-backend"
                   target="_blank"
                 >
+                  <SiGithub /> GitHub
+                </a>
+              </Button>
+            </div>
+          </Card>
+
+          <Card
+            className={`p-5 items-center delay-[800ms] max-w-96 justify-between ${
+              inViewProjects ? "animate-fade-up opacity-100" : "opacity-0"
+            }`}
+          >
+            <div className="h-48 w-60 sm:w-70 flex items-center justify-center">
+              <img src={portfolio} alt="" className="" />
+            </div>
+            <CardTitle>Portfolio</CardTitle>
+            <div className="flex flex-wrap gap-1 justify-center">
+              <Badge className="bg-[#3178C6] ">
+                <SiTypescript /> TypeScript
+              </Badge>
+              <Badge className="bg-[#61DAFB] text-foreground">
+                <SiReact /> React
+              </Badge>
+              <Badge className="bg-[#38BDF8]">
+                <SiTailwindcss /> Tailwind CSS
+              </Badge>
+              <Badge className="bg-black">
+                <SiShadcnui /> shadcn/ui
+              </Badge>
+              <Badge className="bg-[#646CFF]">
+                <SiVite /> Vite
+              </Badge>
+            </div>
+            <p className="text-center text-muted-foreground text-sm">
+              Diese Webseite dient als mein persönliches Portfolio, entwickelt
+              mit modernen Webtechnologien wie React, TypeScript, Tailwind CSS
+              und shadcn/UI. Ziel war es, eine klare, performante und responsive
+              Oberfläche zu gestalten, um meine Projekte und Skills ansprechend
+              zu präsentieren.
+            </p>
+            <div className="flex items-center gap-1">
+              <p className="text-muted-foreground text-sm">Deployment: </p>
+              <Badge>
+                <SiVercel /> Vercel
+              </Badge>
+            </div>
+            <div className="flex gap-5">
+              <Button variant={"outline"} asChild>
+                <a href="https://github.com/eyuhar/portfolio" target="_blank">
                   <SiGithub /> GitHub
                 </a>
               </Button>
