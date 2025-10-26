@@ -342,7 +342,7 @@ function App() {
               ></path>
             </svg>
             <p className="text-center mt-2 text-lg font-medium">HTML</p>
-            <p className="text-muted-foreground">Erfahren</p>
+            <p className="text-muted-foreground">Fortgeschritten</p>
           </div>
 
           <div
@@ -377,7 +377,7 @@ function App() {
               ></path>
             </svg>
             <p className="text-center mt-2 text-lg font-medium">CSS</p>
-            <p className="text-muted-foreground">Erfahren</p>
+            <p className="text-muted-foreground">Fortgeschritten</p>
           </div>
 
           <div
@@ -396,7 +396,7 @@ function App() {
               ></path>
             </svg>
             <p className="text-center mt-2 text-lg font-medium">JavaScript</p>
-            <p className="text-muted-foreground">Erfahren</p>
+            <p className="text-muted-foreground">Fortgeschritten</p>
           </div>
 
           <div
@@ -413,7 +413,7 @@ function App() {
               ></path>
             </svg>
             <p className="text-center mt-2 text-lg font-medium">TypeScript</p>
-            <p className="text-muted-foreground">Erfahren</p>
+            <p className="text-muted-foreground">Fortgeschritten</p>
           </div>
 
           <div
@@ -428,7 +428,7 @@ function App() {
               </g>
             </svg>
             <p className="text-center mt-2 text-lg font-medium">React</p>
-            <p className="text-muted-foreground">Erfahren</p>
+            <p className="text-muted-foreground">Fortgeschritten</p>
           </div>
 
           <div
@@ -443,7 +443,7 @@ function App() {
               ></path>
             </svg>
             <p className="text-center mt-2 text-lg font-medium">Tailwind CSS</p>
-            <p className="text-muted-foreground">Erfahren</p>
+            <p className="text-muted-foreground">Fortgeschritten</p>
           </div>
 
           <div
@@ -468,7 +468,7 @@ function App() {
               </svg>
             </div>
             <p className="text-center mt-2 text-lg font-medium">Shadcn</p>
-            <p className="text-muted-foreground">Erfahren</p>
+            <p className="text-muted-foreground">Fortgeschritten</p>
           </div>
 
           <div
@@ -514,7 +514,7 @@ function App() {
               ></path>
             </svg>
             <p className="text-center mt-2 text-lg font-medium">Vite</p>
-            <p className="text-muted-foreground">Grundkenntnisse</p>
+            <p className="text-muted-foreground text-nowrap">Gute Kenntnisse</p>
           </div>
 
           <div
@@ -563,7 +563,7 @@ function App() {
               </defs>
             </svg>
             <p className="text-center mt-2 text-lg font-medium">PHP</p>
-            <p className="text-muted-foreground">Grundkenntnisse</p>
+            <p className="text-muted-foreground text-nowrap">Gute Kenntnisse</p>
           </div>
 
           <div
@@ -578,7 +578,7 @@ function App() {
               ></path>
             </svg>
             <p className="text-center mt-2 text-lg font-medium">MySQL</p>
-            <p className="text-muted-foreground">Grundkenntnisse</p>
+            <p className="text-muted-foreground text-nowrap">Gute Kenntnisse</p>
           </div>
         </div>
 
