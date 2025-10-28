@@ -29,16 +29,20 @@ import {
   SiGithub,
   SiJsonwebtokens,
   SiPhp,
+  SiPostgresql,
+  SiPrisma,
   SiReact,
   SiReactquery,
   SiReactrouter,
   SiShadcnui,
+  SiSupabase,
   SiTailwindcss,
   SiTypescript,
   SiVercel,
   SiVite,
 } from "react-icons/si";
 import { GrMysql } from "react-icons/gr";
+import { RiNextjsFill } from "react-icons/ri";
 
 function App() {
   const [mounted, setMounted] = useState(false);
@@ -280,16 +284,16 @@ function App() {
                 inViewAbout ? "animate-fade-up opacity-100" : "opacity-0"
               }`}
             >
-              Ich habe einen Bachelorabschluss in Informatik und arbeite im
-              Bereich Webentwicklung mit modernen Technologien wie TypeScript,
-              React, TailwindCSS und Shadcn. Zusätzlich habe ich erste
-              praktische Erfahrungen im Backend-Bereich gesammelt, u. a. mit PHP
-              und MySQL, sowie Grundkenntnisse in Python und Java, die ich
-              während meines Studiums erlernt und angewendet habe.
+              Ich bin Web Entwickler mit Fokus auf modernen
+              Frontend-Technologien wie TypeScript, React, Next.js, Tailwind CSS
+              und shadcn/ui.
               <br />
-              Mein Ziel ist es, mein Wissen gezielt einzusetzen, kontinuierlich
-              zu lernen und in einem professionellen Umfeld aktiv zum Erfolg von
-              Projekten beizutragen.
+              Meine Projekte beinhalten auch Backend-Arbeit mit PHP, MySQL,
+              PostgreSQL, Supabase und Prisma ORM, sodass ich vollständige
+              Webanwendungen umsetzen kann.
+              <br />
+              Ich strebe danach, mein Wissen gezielt einzusetzen, kontinuierlich
+              zu lernen und Projekte effizient voranzubringen.
               <br />
               Abseits der Arbeit halte ich mich mit Sport fit, beschäftige mich
               mit Musik, oder unternehme etwas mit Freunden.
@@ -665,7 +669,71 @@ function App() {
 
         <div className="flex flex-wrap gap-10 sm:gap-20 mt-30 justify-center">
           <Card
-            className={`p-5 items-center delay-[800ms] max-w-96 justify-between ${
+            className={`p-5 items-center delay-[800ms] max-w-96 justify-between overflow-hidden ${
+              inViewProjects ? "animate-fade-up opacity-100" : "opacity-0"
+            }`}
+          >
+            <div className="relative h-48 w-60 sm:w-70 flex items-center justify-center">
+              <div className="absolute h-12 -rotate-[15deg] left-[-35%] top-[45%] w-[180%] bg-[repeating-linear-gradient(-45deg,#facc15_0,#facc15_22px,#000_23px,#000_46px,#facc15_47px)] py-3 text-center shadow-xl">
+                <div className="absolute inset-0 rounded-md pointer-events-none">
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-white/20 rounded-t-md"></div>
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-black/20 rounded-b-md"></div>
+                </div>
+              </div>
+            </div>
+            <CardTitle className="flex flex-col items-center gap-1">
+              <p>AI Tales</p>
+              <p className="text-sm text-muted-foreground font-medium">
+                (in Entwicklung)
+              </p>
+            </CardTitle>
+            <div className="flex flex-wrap gap-1 justify-center">
+              <Badge className="bg-[#3178C6] ">
+                <SiTypescript /> TypeScript
+              </Badge>
+              <Badge className="bg-black">
+                <RiNextjsFill className="w-4! h-4!" /> Next.js
+              </Badge>
+              <Badge className="bg-[#38BDF8]">
+                <SiTailwindcss /> Tailwind CSS
+              </Badge>
+              <Badge className="bg-black">
+                <SiShadcnui /> shadcn/ui
+              </Badge>
+              <Badge className="bg-gray-400">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/zustand/zustand-plain.svg"
+                  className="w-4 h-4"
+                />
+                <p>Zustand</p>
+              </Badge>
+              <Badge className="bg-[#336791]">
+                <SiPostgresql className="w-4! h-4!" /> PostgreSQL
+              </Badge>
+              <Badge className="bg-[#34B27B]">
+                <SiSupabase /> Supabase
+              </Badge>
+              <Badge className="bg-[#5A67D8]">
+                <SiPrisma className="w-4! h-4!" /> Prisma ORM
+              </Badge>
+              <Badge className="bg-[#646CFF]">
+                <SiVite className="w-4! h-4!" /> Vite
+              </Badge>
+            </div>
+            <p className="text-center text-muted-foreground text-sm">
+              AI Tales ist ein interaktives, KI-gestütztes Rollenspiel, das in
+              Next.js entwickelt wird. Die Anwendung kombiniert moderne
+              Webtechnologien mit einer KI-Storyengine, um eine immersive,
+              dynamische Spielerfahrung zu schaffen.
+            </p>
+            <div className="flex items-center gap-1">
+              <p className="text-muted-foreground text-sm"></p>
+            </div>
+            <div className="flex gap-5"></div>
+          </Card>
+
+          <Card
+            className={`p-5 items-center delay-[1000ms] max-w-96 justify-between ${
               inViewProjects ? "animate-fade-up opacity-100" : "opacity-0"
             }`}
           >
@@ -757,7 +825,7 @@ function App() {
           </Card>
 
           <Card
-            className={`p-5 items-center delay-[1000ms] max-w-96 justify-between ${
+            className={`p-5 items-center delay-[1200ms] max-w-96 justify-between ${
               inViewProjects ? "animate-fade-up opacity-100" : "opacity-0"
             }`}
           >
@@ -801,7 +869,7 @@ function App() {
           </Card>
 
           <Card
-            className={`p-5 items-center delay-[1200ms] max-w-96 justify-between ${
+            className={`p-5 items-center delay-[1400ms] max-w-96 justify-between ${
               inViewProjects ? "animate-fade-up opacity-100" : "opacity-0"
             }`}
           >
