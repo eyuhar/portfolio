@@ -340,7 +340,7 @@ function App() {
             </div>
 
             <div
-              className={`w-28 sm:w-32 mt-5 sm:mt-0 flex flex-col items-center justify-center delay-[1050ms] ${
+              className={`w-28 sm:w-32 mt-5 sm:mt-0 flex flex-col items-center justify-center delay-[1000ms] ${
                 inViewSkills ? "animate-fade-up opacity-100" : "opacity-0"
               }`}
             >
@@ -353,7 +353,7 @@ function App() {
             </div>
 
             <div
-              className={`w-28 sm:w-32 mt-5 sm:mt-0 flex flex-col items-center justify-center delay-[1200ms] ${
+              className={`w-28 sm:w-32 mt-5 sm:mt-0 flex flex-col items-center justify-center delay-[1100ms] ${
                 inViewSkills ? "animate-fade-up opacity-100" : "opacity-0"
               }`}
             >
@@ -366,7 +366,7 @@ function App() {
             </div>
 
             <div
-              className={`w-28 sm:w-32 mt-5 sm:mt-0 flex flex-col items-center justify-center delay-[1350ms] ${
+              className={`w-28 sm:w-32 mt-5 sm:mt-0 flex flex-col items-center justify-center delay-[1200ms] ${
                 inViewSkills ? "animate-fade-up opacity-100" : "opacity-0"
               }`}
             >
@@ -379,7 +379,7 @@ function App() {
             </div>
 
             <div
-              className={`w-28 sm:w-32 mt-5 sm:mt-0 flex flex-col items-center justify-center delay-[1500ms] ${
+              className={`w-28 sm:w-32 mt-5 sm:mt-0 flex flex-col items-center justify-center delay-[1300ms] ${
                 inViewSkills ? "animate-fade-up opacity-100" : "opacity-0"
               }`}
             >
@@ -392,7 +392,7 @@ function App() {
             </div>
 
             <div
-              className={`w-28 sm:w-32 mt-5 sm:mt-0 flex flex-col items-center justify-center delay-[1650ms] ${
+              className={`w-28 sm:w-32 mt-5 sm:mt-0 flex flex-col items-center justify-center delay-[1400ms] ${
                 inViewSkills ? "animate-fade-up opacity-100" : "opacity-0"
               }`}
             >
@@ -404,7 +404,7 @@ function App() {
             </div>
 
             <div
-              className={`w-28 sm:w-32 mt-5 sm:mt-0 flex flex-col items-center justify-center delay-[1800ms] ${
+              className={`w-28 sm:w-32 mt-5 sm:mt-0 flex flex-col items-center justify-center delay-[1500ms] ${
                 inViewSkills ? "animate-fade-up opacity-100" : "opacity-0"
               }`}
             >
@@ -419,7 +419,7 @@ function App() {
             </div>
 
             <div
-              className={`w-28 sm:w-32 mt-5 sm:mt-0 flex flex-col items-center justify-center delay-[1950ms] ${
+              className={`w-28 sm:w-32 mt-5 sm:mt-0 flex flex-col items-center justify-center delay-[1600ms] ${
                 inViewSkills ? "animate-fade-up opacity-100" : "opacity-0"
               }`}
             >
@@ -443,7 +443,7 @@ function App() {
             </div>
 
             <div
-              className={`w-28 sm:w-32 mt-5 sm:mt-0 flex flex-col items-center justify-center delay-[2100ms] ${
+              className={`w-28 sm:w-32 mt-5 sm:mt-0 flex flex-col items-center justify-center delay-[1700ms] ${
                 inViewSkills ? "animate-fade-up opacity-100" : "opacity-0"
               }`}
             >
@@ -459,7 +459,7 @@ function App() {
 
         <div className="w-full grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-5 mt-4 md:mt-12 p-5">
           <p
-            className={`text-4xl font-black text-muted-foreground min-w-54 text-center md:text-start mb-4 md:mb-0  delay-[2250ms] ${
+            className={`text-4xl font-black text-muted-foreground min-w-54 text-center md:text-start mb-4 md:mb-0  delay-[1800ms] ${
               inViewSkills ? "animate-fade-right opacity-100" : "opacity-0"
             }`}
           >
@@ -467,7 +467,7 @@ function App() {
           </p>
           <div className="flex flex-wrap gap-4 justify-center md:justify-start">
             <div
-              className={`w-28 sm:w-32 mt-5 sm:mt-0 flex flex-col items-center justify-center delay-[2400ms] ${
+              className={`w-28 sm:w-32 mt-5 sm:mt-0 flex flex-col items-center justify-center delay-[1800ms] ${
                 inViewSkills ? "animate-fade-up opacity-100" : "opacity-0"
               }`}
             >
@@ -479,7 +479,7 @@ function App() {
               <p className="text-center mt-2 text-lg font-medium">PHP</p>
             </div>
             <div
-              className={`w-28 sm:w-32 mt-5 sm:mt-0 flex flex-col items-center justify-center delay-[2550ms] ${
+              className={`w-28 sm:w-32 mt-5 sm:mt-0 flex flex-col items-center justify-center delay-[1900ms] ${
                 inViewSkills ? "animate-fade-up opacity-100" : "opacity-0"
               }`}
             >
@@ -492,7 +492,7 @@ function App() {
             </div>
 
             <div
-              className={`w-28 sm:w-32 mt-5 sm:mt-0 flex flex-col items-center justify-center delay-[2700ms] ${
+              className={`w-28 sm:w-32 mt-5 sm:mt-0 flex flex-col items-center justify-center delay-[2000ms] ${
                 inViewSkills ? "animate-fade-up opacity-100" : "opacity-0"
               }`}
             >
@@ -505,7 +505,7 @@ function App() {
             </div>
 
             <div
-              className={`w-28 sm:w-32 mt-5 sm:mt-0 flex flex-col items-center justify-center delay-[2850ms] ${
+              className={`w-28 sm:w-32 mt-5 sm:mt-0 flex flex-col items-center justify-center delay-[2100ms] ${
                 inViewSkills ? "animate-fade-up opacity-100" : "opacity-0"
               }`}
             >
@@ -518,7 +518,7 @@ function App() {
             </div>
 
             <div
-              className={`w-28 sm:w-32 mt-5 sm:mt-0 flex flex-col items-center justify-center delay-[3000ms] ${
+              className={`w-28 sm:w-32 mt-5 sm:mt-0 flex flex-col items-center justify-center delay-[2200ms] ${
                 inViewSkills ? "animate-fade-up opacity-100" : "opacity-0"
               }`}
             >
@@ -534,7 +534,7 @@ function App() {
 
         <div className="w-full grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-5 mt-4 md:mt-12 p-5">
           <p
-            className={`text-4xl font-black text-muted-foreground min-w-54 text-center md:text-start mb-4 md:mb-0  delay-[3150ms] ${
+            className={`text-4xl font-black text-muted-foreground min-w-54 text-center md:text-start mb-4 md:mb-0  delay-[2300ms] ${
               inViewSkills ? "animate-fade-right opacity-100" : "opacity-0"
             }`}
           >
@@ -542,7 +542,7 @@ function App() {
           </p>
           <div className="flex flex-wrap gap-4 justify-center md:justify-start">
             <div
-              className={`w-28 sm:w-32 mt-5 sm:mt-0 flex flex-col items-center justify-center delay-[3300ms] ${
+              className={`w-28 sm:w-32 mt-5 sm:mt-0 flex flex-col items-center justify-center delay-[2300ms] ${
                 inViewSkills ? "animate-fade-up opacity-100" : "opacity-0"
               }`}
             >
@@ -554,7 +554,7 @@ function App() {
             </div>
 
             <div
-              className={`w-28 sm:w-32 mt-5 sm:mt-0 flex flex-col items-center justify-center delay-[3450ms] ${
+              className={`w-28 sm:w-32 mt-5 sm:mt-0 flex flex-col items-center justify-center delay-[2400ms] ${
                 inViewSkills ? "animate-fade-up opacity-100" : "opacity-0"
               }`}
             >
@@ -567,7 +567,7 @@ function App() {
             </div>
 
             <div
-              className={`w-28 sm:w-32 mt-5 sm:mt-0 flex flex-col items-center justify-center delay-[3600ms] ${
+              className={`w-28 sm:w-32 mt-5 sm:mt-0 flex flex-col items-center justify-center delay-[2500ms] ${
                 inViewSkills ? "animate-fade-up opacity-100" : "opacity-0"
               }`}
             >
@@ -579,7 +579,7 @@ function App() {
             </div>
 
             <div
-              className={`w-28 sm:w-32 mt-5 sm:mt-0 flex flex-col items-center justify-center delay-[3750ms] ${
+              className={`w-28 sm:w-32 mt-5 sm:mt-0 flex flex-col items-center justify-center delay-[2600ms] ${
                 inViewSkills ? "animate-fade-up opacity-100" : "opacity-0"
               }`}
             >
@@ -591,7 +591,7 @@ function App() {
             </div>
 
             <div
-              className={`w-28 sm:w-32 mt-5 sm:mt-0 flex flex-col items-center justify-center delay-[3900ms] ${
+              className={`w-28 sm:w-32 mt-5 sm:mt-0 flex flex-col items-center justify-center delay-[2700ms] ${
                 inViewSkills ? "animate-fade-up opacity-100" : "opacity-0"
               }`}
             >
@@ -607,7 +607,7 @@ function App() {
 
         <div className="w-full grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-5 mt-4 md:mt-12 p-5">
           <p
-            className={`text-4xl font-black text-muted-foreground min-w-54 text-center md:text-start mb-4 md:mb-0 delay-[4050ms] ${
+            className={`text-4xl font-black text-muted-foreground min-w-54 text-center md:text-start mb-4 md:mb-0 delay-[2800ms] ${
               inViewSkills ? "animate-fade-right opacity-100" : "opacity-0"
             }`}
           >
@@ -615,7 +615,7 @@ function App() {
           </p>
           <div className="flex flex-wrap gap-4 justify-center md:justify-start">
             <div
-              className={`w-28 sm:w-32 mt-5 sm:mt-0 flex flex-col items-center justify-center delay-[4200ms] ${
+              className={`w-28 sm:w-32 mt-5 sm:mt-0 flex flex-col items-center justify-center delay-[2800ms] ${
                 inViewSkills ? "animate-fade-up opacity-100" : "opacity-0"
               }`}
             >
@@ -628,7 +628,7 @@ function App() {
             </div>
 
             <div
-              className={`w-28 sm:w-32 mt-5 sm:mt-0 flex flex-col items-center justify-center delay-[4350ms] ${
+              className={`w-28 sm:w-32 mt-5 sm:mt-0 flex flex-col items-center justify-center delay-[2900ms] ${
                 inViewSkills ? "animate-fade-up opacity-100" : "opacity-0"
               }`}
             >
