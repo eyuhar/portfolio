@@ -682,7 +682,7 @@ function App() {
               </div>
             </div>
             <CardTitle className="flex flex-col items-center gap-1">
-              <p>AI Tales</p>
+              <p>TaleSynth</p>
               <p className="text-sm text-muted-foreground font-medium">
                 (in Entwicklung)
               </p>
@@ -721,7 +721,7 @@ function App() {
               </Badge>
             </div>
             <p className="text-center text-muted-foreground text-sm">
-              AI Tales ist ein interaktives, KI-gestütztes Rollenspiel, das in
+              TaleSynth ist ein interaktives, KI-gestütztes Rollenspiel, das in
               Next.js entwickelt wird. Die Anwendung kombiniert moderne
               Webtechnologien mit einer KI-Storyengine, um eine immersive,
               dynamische Spielerfahrung zu schaffen.
