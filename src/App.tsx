@@ -716,9 +716,6 @@ function App() {
               <Badge className="bg-[#5A67D8]">
                 <SiPrisma className="w-4! h-4!" /> Prisma ORM
               </Badge>
-              <Badge className="bg-[#646CFF]">
-                <SiVite className="w-4! h-4!" /> Vite
-              </Badge>
             </div>
             <p className="text-center text-muted-foreground text-sm">
               TaleSynth ist ein interaktives, KI-gestütztes Rollenspiel, das in
