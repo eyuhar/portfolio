@@ -726,7 +726,13 @@ function App() {
             <div className="flex items-center gap-1">
               <p className="text-muted-foreground text-sm"></p>
             </div>
-            <div className="flex gap-5"></div>
+            <div className="flex gap-5">
+              <Button variant={"outline"} asChild>
+                <a href="https://github.com/eyuhar/talesynth" target="_blank">
+                  <SiGithub /> GitHub
+                </a>
+              </Button>
+            </div>
           </Card>
 
           <Card
