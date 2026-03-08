@@ -605,12 +605,24 @@ function App() {
 
               <p className="text-center mt-2 text-lg font-medium">AWS</p>
             </div>
+            <div
+              className={`w-28 sm:w-32 mt-5 sm:mt-0 flex flex-col items-center justify-center delay-[2800ms] ${
+                inViewSkills ? "animate-fade-up opacity-100" : "opacity-0"
+              }`}
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg"
+                className="w-15 h-15"
+              />
+
+              <p className="text-center mt-2 text-lg font-medium">Linux</p>
+            </div>
           </div>
         </div>
 
         <div className="w-full grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-5 mt-4 md:mt-12 p-5">
           <p
-            className={`text-4xl font-black text-muted-foreground min-w-54 text-center md:text-start mb-4 md:mb-0 delay-[2800ms] ${
+            className={`text-4xl font-black text-muted-foreground min-w-54 text-center md:text-start mb-4 md:mb-0 delay-[2900ms] ${
               inViewSkills ? "animate-fade-right opacity-100" : "opacity-0"
             }`}
           >
@@ -618,7 +630,7 @@ function App() {
           </p>
           <div className="flex flex-wrap gap-4 justify-center md:justify-start">
             <div
-              className={`w-28 sm:w-32 mt-5 sm:mt-0 flex flex-col items-center justify-center delay-[2800ms] ${
+              className={`w-28 sm:w-32 mt-5 sm:mt-0 flex flex-col items-center justify-center delay-[3000ms] ${
                 inViewSkills ? "animate-fade-up opacity-100" : "opacity-0"
               }`}
             >
@@ -631,7 +643,7 @@ function App() {
             </div>
 
             <div
-              className={`w-28 sm:w-32 mt-5 sm:mt-0 flex flex-col items-center justify-center delay-[2900ms] ${
+              className={`w-28 sm:w-32 mt-5 sm:mt-0 flex flex-col items-center justify-center delay-[3100ms] ${
                 inViewSkills ? "animate-fade-up opacity-100" : "opacity-0"
               }`}
             >
