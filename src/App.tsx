@@ -218,7 +218,7 @@ function App() {
               mounted ? "animate-fade-up delay-[1400ms]" : "opacity-0"
             }`}
           >
-            Web Entwickler
+            Software Developer
           </p>
           <div
             className={`flex gap-3 ${
@@ -284,9 +284,8 @@ function App() {
                 inViewAbout ? "animate-fade-up opacity-100" : "opacity-0"
               }`}
             >
-              Ich bin Web Entwickler mit Fokus auf modernen
-              Frontend-Technologien wie TypeScript, React, Next.js, Tailwind CSS
-              und shadcn/ui.
+              Ich bin Softwareentwickler mit Fokus auf moderne Webtechnologien
+              wie TypeScript, React, Next.js und Tailwind CSS.
               <br />
               Meine Projekte beinhalten auch Backend-Arbeit mit PHP, MySQL,
               PostgreSQL, Supabase und Prisma ORM, sodass ich vollständige
@@ -726,12 +725,50 @@ function App() {
             <div className="flex items-center gap-1">
               <p className="text-muted-foreground text-sm"></p>
             </div>
+            <div className="flex items-center gap-1">
+              <p className="text-muted-foreground text-sm">Deployment: </p>
+              <Badge>
+                <SiVercel /> Vercel
+              </Badge>
+            </div>
             <div className="flex gap-5">
-              <Button variant={"outline"} asChild>
-                <a href="https://github.com/eyuhar/talesynth" target="_blank">
-                  <SiGithub /> GitHub
-                </a>
-              </Button>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button variant={"outline"} className="cursor-pointer">
+                    Live Demo
+                  </Button>
+                </DialogTrigger>
+                <DialogContent>
+                  <DialogHeader className="items-center">
+                    <DialogTitle className="flex gap-1 items-center">
+                      <Info size={20} />
+                      <p>Info</p>
+                    </DialogTitle>
+                    <DialogDescription>
+                      Um die WebApp besser testen zu können registrieren Sie
+                      sich bitte auf der App oder nutzen die folgenden
+                      Testzugangsdaten:
+                    </DialogDescription>
+                  </DialogHeader>
+                  <div className="flex flex-col items-center mt-5">
+                    <p className="font-medium">Email</p>
+                    <p className="text-muted-foreground text-sm">
+                      test@example.com
+                    </p>
+                  </div>
+                  <div className="flex flex-col items-center mb-5">
+                    <p className="font-medium">Passwort</p>
+                    <p className="text-muted-foreground text-sm">Test</p>
+                  </div>
+                  <DialogFooter>
+                    <Button variant={"outline"} asChild>
+                      <a href="https://talesynth.vercel.app/" target="_blank">
+                        Weiter
+                      </a>
+                    </Button>
+                  </DialogFooter>
+                </DialogContent>
+              </Dialog>
             </div>
           </Card>
 
@@ -801,8 +838,8 @@ function App() {
                       <p>Info</p>
                     </DialogTitle>
                     <DialogDescription>
-                      Um die WebApp besser testen zu können, nutze bitte die
-                      folgenden Testzugangsdaten:
+                      Um die WebApp besser testen zu können, nutzen Sie bitte
+                      die folgenden Testzugangsdaten:
                     </DialogDescription>
                   </DialogHeader>
                   <div className="flex flex-col items-center mt-5">
