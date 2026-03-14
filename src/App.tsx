@@ -1,6 +1,7 @@
 import picture from "@/assets/picture.jpg";
 import manxaLogo from "@/assets/ManxaLogo.png";
 import ManxaBackend from "@/assets/ManxaBackend.png";
+import talesynthwm from "@/assets/talesynth.svg";
 import portfolio from "@/assets/portfolio-site-screenshot.png";
 import { Button } from "./components/ui/button";
 import { Card, CardDescription, CardTitle } from "./components/ui/card";
@@ -685,12 +686,7 @@ function App() {
             }`}
           >
             <div className="relative h-48 w-60 sm:w-70 flex items-center justify-center">
-              <div className="absolute h-12 -rotate-[15deg] left-[-35%] top-[45%] w-[180%] bg-[repeating-linear-gradient(-45deg,#facc15_0,#facc15_22px,#000_23px,#000_46px,#facc15_47px)] py-3 text-center shadow-xl">
-                <div className="absolute inset-0 rounded-md pointer-events-none">
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-white/20 rounded-t-md"></div>
-                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-black/20 rounded-b-md"></div>
-                </div>
-              </div>
+              <img src={talesynthwm} alt="" className="" />
             </div>
             <CardTitle className="flex flex-col items-center gap-1">
               <p>TaleSynth</p>
@@ -744,6 +740,11 @@ function App() {
               </Badge>
             </div>
             <div className="flex gap-5">
+              <Button variant={"outline"} asChild>
+                <a href="https://github.com/eyuhar/talesynth" target="_blank">
+                  <SiGithub /> GitHub
+                </a>
+              </Button>
               <Dialog>
                 <DialogTrigger asChild>
                   <Button variant={"outline"} className="cursor-pointer">
@@ -1006,7 +1007,7 @@ function App() {
         </div>
         {/* Contact section */}
         <div className="mt-auto text-muted-foreground">
-          <p>Copyright &copy; 2025 Eyyüp Harputlu. All Rights Reserved.</p>
+          <p>Copyright &copy; 2026 Eyyüp Harputlu. All Rights Reserved.</p>
         </div>
       </div>
       <ScrollToTopButton className="fixed bottom-5 right-5 md:bottom-10 md:right-10" />
