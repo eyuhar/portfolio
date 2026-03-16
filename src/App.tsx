@@ -740,6 +740,11 @@ function App() {
               </Badge>
             </div>
             <div className="flex gap-5">
+              <Button variant={"outline"} asChild>
+                <a href="https://github.com/eyuhar/talesynth" target="_blank">
+                  <SiGithub /> GitHub
+                </a>
+              </Button>
               <Dialog>
                 <DialogTrigger asChild>
                   <Button variant={"outline"} className="cursor-pointer">
