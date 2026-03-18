@@ -728,8 +728,8 @@ function App() {
             <p className="text-center text-muted-foreground text-sm">
               TaleSynth ist ein interaktives, KI-gestütztes Rollenspiel, das in
               Next.js entwickelt wird. Die Anwendung kombiniert moderne
-              Webtechnologien mit einer KI-Storyengine, um eine immersive,
-              dynamische Spielerfahrung zu schaffen.
+              Webtechnologien mit einer KI-Engine, um eine immersive, dynamische
+              Spielerfahrung zu schaffen.
             </p>
             <div className="flex items-center gap-1">
               <p className="text-muted-foreground text-sm"></p>
