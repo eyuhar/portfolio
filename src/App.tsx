@@ -44,6 +44,7 @@ import {
 } from "react-icons/si";
 import { GrMysql } from "react-icons/gr";
 import { RiNextjsFill } from "react-icons/ri";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   const [mounted, setMounted] = useState(false);
@@ -1011,6 +1012,7 @@ function App() {
         </div>
       </div>
       <ScrollToTopButton className="fixed bottom-5 right-5 md:bottom-10 md:right-10" />
+      <Analytics />
     </div>
   );
 }
